@@ -10,20 +10,21 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 /**
  * Created by asus on 2016/7/12.
  */
 public class MainActivity extends Activity implements View.OnClickListener {
-    private Button mBtSend ;
+    private ImageButton mBtSend ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test);
-        mBtSend = (Button) findViewById(R.id.send);
+        mBtSend = (ImageButton) findViewById(R.id.send);
+        mBtSend.setImageDrawable(getResources().getDrawable(R.drawable.abc_ic_search));
         mBtSend.setOnClickListener(this);
     }
 
