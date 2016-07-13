@@ -8,7 +8,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Send Notification"
-        android:onClick="on"
         />
+    <Button
+        android:id="@+id/broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="send broadcast"/>
 
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.liangdekai.demo;
 import android.app.Activity;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,22 +11,28 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.liangdekai.demo.broadcast.BoradcastActiivity;
 
 /**
  * Created by asus on 2016/7/12.
  */
 public class MainActivity extends Activity implements View.OnClickListener {
     private ImageButton mBtSend ;
+    private Button mBtTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test);
+        mBtTest = (Button) findViewById(R.id.broadcast);
         mBtSend = (ImageButton) findViewById(R.id.send);
         mBtSend.setImageDrawable(getResources().getDrawable(R.drawable.abc_ic_search));
         mBtSend.setOnClickListener(this);
+        mBtTest.setOnClickListener(this);
     }
 
     @Override
@@ -52,6 +59,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 mBuilder.setContentIntent(pendingIntent);
                 mNotificationManager.notify(1, mBuilder.build());
                 Toast.makeText(this,"按钮已经点击",Toast.LENGTH_LONG).show();
+                break;
+            case R.id.broadcast :
+                Intent intent = new Intent(this, BoradcastActiivity.class);
+                startActivity(intent);
+                finish();
         }
     }
 }
