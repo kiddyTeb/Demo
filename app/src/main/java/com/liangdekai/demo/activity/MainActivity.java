@@ -1,9 +1,8 @@
-package com.liangdekai.demo;
+package com.liangdekai.demo.activity;
 
 import android.app.Activity;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,7 +14,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.liangdekai.demo.broadcast.BoradcastActiivity;
+import com.liangdekai.demo.R;
 
 /**
  * Created by asus on 2016/7/12.
