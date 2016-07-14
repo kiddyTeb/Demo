@@ -24,7 +24,13 @@
 
         </activity>
 
+        <service android:name="service.SleepService">
 
+        </service>
+
+        <receiver android:name="service.SleepReceiver">
+
+        </receiver>
     </application>
 
 </manifest>

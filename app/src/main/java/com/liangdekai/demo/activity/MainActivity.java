@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 import com.liangdekai.demo.R;
 
+import service.SleepService;
+
 /**
  * Created by asus on 2016/7/12.
  */
@@ -26,6 +28,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private ImageButton mBtSend ;
     private Button mBtTest;
     private Button mBtThread;
+    private Button mBtSleep;
     private ProgressDialog progressDialog;
 
 
@@ -36,10 +39,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mBtTest = (Button) findViewById(R.id.broadcast);
         mBtSend = (ImageButton) findViewById(R.id.send);
         mBtThread = (Button) findViewById(R.id.interrupt);
+        mBtSleep = (Button) findViewById(R.id.sleep);
         mBtSend.setImageDrawable(getResources().getDrawable(R.drawable.abc_ic_search));
         mBtSend.setOnClickListener(this);
         mBtTest.setOnClickListener(this);
         mBtThread.setOnClickListener(this);
+        mBtSleep.setOnClickListener(this);
     }
 
     @Override
@@ -107,7 +112,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     }
                 });
                 TestThread.start();
+            case R.id.sleep :
+                Intent i = new Intent(this , SleepService.class) ;
+                startService(i);
         }
+
     }
 
     public void request() throws InterruptedException {
