@@ -15,4 +15,10 @@
         android:layout_height="wrap_content"
         android:text="send broadcast"/>
 
+    <Button
+        android:id="@+id/interrupt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="中断线程测试"/>
+
 </LinearLayout>
