@@ -32,7 +32,7 @@ public class SleepService extends Service {
         long sleepTime = SystemClock.elapsedRealtime() + 10*1000;
         Intent intent1 = new Intent(this , SleepService.class);
         PendingIntent pi = PendingIntent.getService(this,0,intent1,0);
-        manager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP ,sleepTime,1000,pi);
+        manager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP ,sleepTime,pi);
         //Log.d("Test","i had reached here");
         return super.onStartCommand(intent, flags, startId);
     }

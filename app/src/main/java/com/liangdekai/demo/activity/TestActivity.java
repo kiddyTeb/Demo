@@ -5,15 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.liangdekai.demo.R;
 
 /**
- * Created by asus on 2016/7/12.
+ * Created by asus on 2016/7/16.
  */
-public class NotificationActivity extends Activity implements View.OnClickListener{
-    private TextView mTvMsg;
+public class TestActivity extends Activity implements View.OnClickListener{
     private Button button;
 
     @Override
@@ -28,9 +26,7 @@ public class NotificationActivity extends Activity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.ss :
-                Intent i = new Intent(this , TestActivity.class);
-                startActivity(i);
-                break;
+
         }
     }
 }

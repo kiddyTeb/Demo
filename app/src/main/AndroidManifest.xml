@@ -17,7 +17,8 @@
         </activity>
 
         <activity android:name=".activity.NotificationActivity"
-                  android:parentActivityName=".activity.MainActivity" >
+                  android:parentActivityName=".activity.MainActivity"
+                    android:launchMode="singleInstance">
         </activity>
 
         <activity android:name=".activity.BoradcastActiivity">
@@ -31,6 +32,10 @@
         <receiver android:name="service.SleepReceiver">
 
         </receiver>
+
+        <activity android:name=".activity.TestActivity">
+
+        </activity>
     </application>
 
 </manifest>

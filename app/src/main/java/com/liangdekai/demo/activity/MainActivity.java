@@ -40,11 +40,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mBtSend = (ImageButton) findViewById(R.id.send);
         mBtThread = (Button) findViewById(R.id.interrupt);
         mBtSleep = (Button) findViewById(R.id.sleep);
-        mBtSend.setImageDrawable(getResources().getDrawable(R.drawable.abc_ic_search));
+        finish();
+        Log.d("Test","i have it");
+        mBtSend.setImageDrawable(getResources().getDrawable(R.drawable.abc_ab_share_pack_mtrl_alpha));
         mBtSend.setOnClickListener(this);
         mBtTest.setOnClickListener(this);
         mBtThread.setOnClickListener(this);
         mBtSleep.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("Test","die");
     }
 
     @Override
@@ -55,7 +63,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 NotificationCompat.Builder mBuilder =
                         new NotificationCompat.Builder(this)
-                                .setSmallIcon(R.drawable.abc_ic_search)
+                                .setSmallIcon(R.drawable.abc_ab_share_pack_mtrl_alpha)
                                 .setContentTitle("My notification")
                                 .setContentText("Hello World!");
                 mBuilder.setAutoCancel(true);//设置自动关闭
@@ -113,8 +121,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 });
                 TestThread.start();
             case R.id.sleep :
-                Intent i = new Intent(this , SleepService.class) ;
-                startService(i);
+                /*Intent i = new Intent(this , SleepService.class) ;
+                startService(i);*/
+                Intent i = new Intent(this ,NotificationActivity.class);
+                startActivity(i);
         }
 
     }
